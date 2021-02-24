@@ -3,7 +3,7 @@ import Cell from './Cell.js'
 
 
 export default class Matrix extends Component {
-  
+
   genRow = (vals) => {
     return vals.map(val => <Cell value={val} />) // replace me and render a cell component instead!
   }
@@ -20,4 +20,12 @@ export default class Matrix extends Component {
     )
   }
   
+}
+
+
+Matrix.defaultProps = {
+  values: (() => {
+    const defRow = ['#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00']
+    return (new Array(10).fill(defRow))
+  })()
 }
